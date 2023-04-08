@@ -1,0 +1,27 @@
+VPATH = /home/dom/Downloads/snyway/synway/16/include/*.h
+# Makefile for Synway fax modem code
+
+# Compiler and linker settings
+CC = clang
+CFLAGS = -Wall -O2
+LDFLAGS =
+
+# Source files and object files
+SRCS = test.c $(VPATH)
+OBJS = $(SRCS:.c=.o)
+
+# Output executable name
+EXEC = modem
+
+# Rules for building the executable
+all: $(EXEC)
+
+$(EXEC): $(OBJS)
+	$(CC) $(LDFLAGS) -o $@ $^
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Clean up object files and executable
+clean:
+	rm -f $(OBJS) $(EXEC)
