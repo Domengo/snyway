@@ -12,6 +12,7 @@
 
 #include "commtype.h"
 #include "gaoapi.h"
+#include "hdlcstru.h"
 
 
 
@@ -27,7 +28,7 @@ UBYTE ModemDataMem[Modem_Channel_Number][Modem_Data_SIZE];
 /*Assume array store as [0][0]--[0][n];[1][0]--[1][n];...;[m][0]--[m][n]*/
 UBYTE *pModemDataMem[Modem_Channel_Number];
 
-MODEM_Status Status[Modem_Channel_Number];
+UBYTE MODEM_Status Status[Modem_Channel_Number];
 
 SWORD pPCMIn[PCMSIZE];
 SWORD pPCMOut[PCMSIZE];
@@ -210,5 +211,3 @@ void main()
 
 
 }
-
-
